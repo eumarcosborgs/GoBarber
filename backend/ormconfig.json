@@ -3,8 +3,8 @@
   "host": "localhost",
   "port": "5432",
   "username": "postgres",
-  "password": "marcos",
-  "database": "gostack_gobarber",
+  "password": "docker",
+  "database": "postgres",
   "entities": [
     "./src/modules/**/infra/typeorm/entities/*.ts"
   ],
