@@ -1,4 +1,4 @@
-import AppError from '@shared/errors/AppError';
+import Error from '@shared/errors/AppError';
 
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
@@ -48,7 +48,7 @@ describe('CreateUser', () => {
         email: 'johndoe@example.com',
         password: '123456789',
       }),
-    ).rejects.toBeInstanceOf(AppError);
+    ).rejects.toBeInstanceOf(Error);
   });
 
   it('should not be able to authenticate with wrong password', async () => {
@@ -75,6 +75,6 @@ describe('CreateUser', () => {
         email: 'johndoe@example.com',
         password: 'wrong-password',
       }),
-    ).rejects.toBeInstanceOf(AppError);
+    ).rejects.toBeInstanceOf(Error);
   });
 });

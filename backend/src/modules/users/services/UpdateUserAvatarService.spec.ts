@@ -1,4 +1,4 @@
-import AppError from '@shared/errors/AppError';
+import Error from '@shared/errors/AppError';
 
 import FakeStorageProvider from '@shared/container/providers/StorageProvider/fakes/FakeStorageProvider';
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
@@ -42,7 +42,7 @@ describe('UpdateUserAvatar', () => {
         user_id: 'non-existing-user',
         avatarFilename: 'avatarExemple.png',
       }),
-    ).rejects.toBeInstanceOf(AppError);
+    ).rejects.toBeInstanceOf(Error);
   });
 
   it('should delete old avatar when updating new one', async () => {
