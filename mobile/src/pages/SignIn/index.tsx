@@ -78,11 +78,11 @@ const SignIn: React.FC = () => {
 
         Alert.alert(
           'Erro na autenticação',
-          'Ocorreu um erro ao fazer login, cheque as credencias.'
+          'Ocorreu um erro ao fazer login, cheque as credencias.',
         );
       }
     },
-    [signIn]
+    [signIn],
   );
 
   return (

@@ -1,11 +1,12 @@
 import React, {
   createContext,
   useCallback,
-  useState,
   useContext,
+  useState,
   useEffect,
 } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
+
 import api from '../services/api';
 
 interface AuthState {
@@ -13,7 +14,7 @@ interface AuthState {
   user: object;
 }
 
-interface signInCredentials {
+interface SignInCredentials {
   email: string;
   password: string;
 }
@@ -21,7 +22,7 @@ interface signInCredentials {
 interface AuthContextData {
   user: object;
   loading: boolean;
-  signIn(credentials: signInCredentials): Promise<void>;
+  signIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
 }
 
@@ -32,7 +33,7 @@ const AuthProvider: React.FC = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function loadStorageData(): Promise<void> {
+    async function loadStoragedData(): Promise<void> {
       const [token, user] = await AsyncStorage.multiGet([
         '@GoBarber:token',
         '@GoBarber:user',
@@ -45,7 +46,7 @@ const AuthProvider: React.FC = ({ children }) => {
       setLoading(false);
     }
 
-    loadStorageData();
+    loadStoragedData();
   }, []);
 
   const signIn = useCallback(async ({ email, password }) => {

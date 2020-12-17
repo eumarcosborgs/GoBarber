@@ -23,11 +23,15 @@ DerivedData
 
 # Android/IntelliJ
 #
-# build/
+build/
 # .idea
 # .gradle
 # local.properties
 # *.iml
+
+# Visual Studio Code
+#
+.vscode/
 
 # node.js
 #
