@@ -72,6 +72,8 @@ const SignUp: React.FC = () => {
           return;
         }
 
+        console.log(err);
+
         Alert.alert(
           'Erro no cadastro',
           'Ocorreu um erro ao fazer cadastro, tente novamente.',
@@ -145,7 +147,7 @@ const SignUp: React.FC = () => {
                   formRef.current?.submitForm();
                 }}
               >
-                Entrar
+                Cadastrar
               </Button>
             </Form>
           </Container>
